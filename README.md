@@ -1,1 +1,1 @@
-# cryptocurrency-charting-tool
+# Cryptocurrency Charting Tool
