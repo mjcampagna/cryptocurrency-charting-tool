@@ -1,5 +1,6 @@
 import React from 'react';
 
+import HistoricalData from './HistoricalData.jsx';
 import Footer from './Footer.jsx';
 
 export default class App extends React.Component {
@@ -41,7 +42,7 @@ export default class App extends React.Component {
 		return (
 			<React.Fragment>
 				<p>{JSON.stringify(this.state.currentData)}</p>
-				<p>{JSON.stringify(this.state.historicalData)}</p>
+				<HistoricalData data={this.state.historicalData} />
 				<Footer />
 			</React.Fragment>
 		);
