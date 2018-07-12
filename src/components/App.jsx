@@ -7,22 +7,11 @@ export default class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentData: null,
 			historicalData: null
 		}
 	}
 
 	componentDidMount() {
-		// GET currentData
-		fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
-		.then( response => response.json() )
-		.then( response => {
-			this.setState({
-				currentData: response.bpi
-			})
-		})
-		.catch( error => console.log(error) );
-
 		// GET historicalData
 		fetch('https://api.coindesk.com/v1/bpi/historical/close.json')
 		.then( response => response.json() )
@@ -41,7 +30,6 @@ export default class App extends React.Component {
 	renderView() {
 		return (
 			<React.Fragment>
-				<p>{JSON.stringify(this.state.currentData)}</p>
 				<HistoricalData data={this.state.historicalData} />
 				<Footer />
 			</React.Fragment>
